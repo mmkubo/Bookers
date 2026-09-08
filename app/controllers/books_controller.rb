@@ -8,11 +8,15 @@ class BooksController < ApplicationController
     @book = Book.new
     @books = Book.all
   end
-    def create
+  def create
     @book = Book.new(book_params)
-    @book.save
-    redirect_to book_path(@book.id)
-
+    if @book.save
+      flash[:notice] = "Book was successfully created."
+      redirect_to book_path(@book.id)
+    else
+      @books = Book.all
+      render :index, status: :unprocessable_entity
+    end
   end
 
   def show
@@ -23,6 +27,22 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
+  def update
+    book = Book.find(params[:id])
+    if @book.update
+      flash[:notice] = "Book was successfully updated."
+      redirect_to book_path(@book.id)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+    redirect_to book_path(book.id)
+  end
+
+  def destroy
+    book = Book.find(params[:id])
+    book.destroy
+    redirect_to '/books'
+  end
 
 private
   def book_params

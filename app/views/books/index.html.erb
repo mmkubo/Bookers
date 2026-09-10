@@ -1,10 +1,11 @@
+<div class="index">
 <h1>Books</h1>
 
   <table>
     <thead>
       <tr>
-        <th>title</th>
-        <th>body</th>
+        <th>Title</th>
+        <th>Body</th>
       </tr>
     </thead>
     <tbody>
@@ -25,24 +26,38 @@
       <% end %>
     </tbody>
   </table>
+</div>
 
+<div class="form">
 <h2>New book</h2>
+
+
 <% if @book.errors.any? %>
-  <%= @book.errors.count %> errors prohibited this book from being saved:
+  <div class="error_explanation">
+  <h2 class="error-title"><%= @book.errors.count %> errors prohibited this book from being saved:<h2>
   <ul>
     <% @book.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>
   </ul>
 <% end %>
+</div>
+
 
 <%= form_with model: @book do |f| %>
 
-  <p>Title</p>
-  <%= f.text_field :title %>
-  <p>Body</p>
-  <%= f.text_area :body %>
+  <div class="field">
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :body, "Body" %>
+    <%= f.text_area :body %>
+  </div>
 
+  <div class="submit">
   <%= f.submit "Create Book" %>
+  </div>
 
 <% end %>
+</div>

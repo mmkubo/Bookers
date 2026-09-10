@@ -84,16 +84,16 @@ input[type="submit"] {
 .error_explanation{
   width: 50%;
   max-width: 450px;
-  border: 1px solid red;
   margin-bottom: 18px;
-  background-color: gainsboro;
+  border: 3px solid #c80202;
+  background-color: #e8e9ec;
 }
 .error-title{
   text-align: left;
   color: white;
   font-size: 12px;
   font-weight: bold;
-  background-color: red;
+  background-color: #c80202;
   padding: 7px 0 7px 15px;
 }
 
@@ -105,4 +105,18 @@ li{
   font-size: 12px;
   font-weight: normal;
   margin-left: 40px;
+}
+
+/*　エラー時のフォーム部分(index, edit共通)　*/
+.field_with_errors label{
+  display: table;
+  padding: 3px;
+  color: white;
+  background-color: #c80202;
+}
+.field_with_errors input[type="text"]{
+  border: 3px solid #c80202;
+}
+.field_with_errors textarea{
+  border: 3px solid #c80202;
 }

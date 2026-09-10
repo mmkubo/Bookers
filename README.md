@@ -1,24 +1,8 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# SHIFT TERAS CAMPUSコンテンツ【アプリケーションを完成させよう】
 
-Things you may want to cover:
+SHIFT TERAS CAMPUSの学習コンテンツアプリケーションを完成させようの課題（Bookers）です
 
-* Ruby version
+## 使い方
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+html/cssファイルのため、PCのブラウザで実行できます。
